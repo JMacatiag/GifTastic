@@ -52,11 +52,14 @@ function makeImage(){
             }
         }
         animation();
+        button();
      });
+    return;
 };
 
 $("#buttonHolder").empty();
 createButton();
+button();
 
 $("#addSearch").on("click", function(event){
 	event.preventDefault();
@@ -71,6 +74,7 @@ $("#addSearch").on("click", function(event){
 
 
 // Create Images
+function button(){
 $(".button").on("click", function(){
 	// $("#imageHolder").empty();
 	search=$(this).html();
@@ -78,8 +82,9 @@ $(".button").on("click", function(){
 	queryURL="https://api.giphy.com/v1/gifs/search?q="+search+"&api_key="+apiKey;
     makeImage();
 });
+}
 
-
+// Animation function
 function animation(){
 	$(".resultGif").on("click", function() {
 	console.log(this);
