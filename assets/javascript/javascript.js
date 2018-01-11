@@ -7,7 +7,7 @@ var queryURL="";
 
 // Button creator
 function createButton(){
-	$("#buttonHolder").html("");
+  $("#buttonHolder").empty();
 	for (var i=0; i<topics.length; i++){
 	var buttonHTML="<button class='button'>"+topics[i]+"</button>"
 	$("#buttonHolder").append(buttonHTML);
@@ -52,9 +52,8 @@ function makeImage(){
             }
         }
         animation();
-        button();
      });
-    return;
+    button();
 };
 
 $("#buttonHolder").empty();
@@ -75,13 +74,13 @@ $("#addSearch").on("click", function(event){
 
 // Create Images
 function button(){
-$(".button").on("click", function(){
-	// $("#imageHolder").empty();
-	search=$(this).html();
-	// makeImage();
-	queryURL="https://api.giphy.com/v1/gifs/search?q="+search+"&api_key="+apiKey;
-    makeImage();
-});
+  $(".button").on("click", function(){
+  	// $("#imageHolder").empty();
+  	search=$(this).html();
+  	// makeImage();
+  	queryURL="https://api.giphy.com/v1/gifs/search?q="+search+"&api_key="+apiKey;
+      makeImage();
+  });
 }
 
 // Animation function
